@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delphi Decide — Clarity from Complexity</title>
+<meta name="description" content="We help growing businesses make smarter decisions, faster — by turning their data into tools they actually use.">
+<link rel="canonical" href="https://www.delphidecide.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:       #F7F3EC;
+    --cream-dark:  #EDE7DA;
+    --parchment:   #E8DFD0;
+    --terracotta:  #C4622D;
+    --terra-light: #E8845A;
+    --terra-dark:  #8B3D17;
+    --ink:         #1C1510;
+    --ink-mid:     #3D2E22;
+    --ink-soft:    #6B5744;
+    --ink-muted:   #9B8878;
+    --gold:        #B8922A;
+    --gold-light:  #D4AF6A;
+    --white:       #FDFAF6;
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --sans:        'Jost', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(247, 243, 236, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(180, 150, 110, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+
+  .nav-logo-text {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-logo-text span {
+    color: var(--terracotta);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white) !important;
+    background: var(--terracotta);
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .nav-cta:hover {
+    background: var(--terra-dark) !important;
+    color: var(--white) !important;
+    transform: translateY(-1px);
+  }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 7rem 4rem 5rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-circle {
+    position: absolute;
+    right: -8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55vw;
+    height: 55vw;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, var(--parchment) 0%, transparent 70%);
+    border: 1px solid rgba(180, 150, 110, 0.25);
+    z-index: 0;
+    animation: gentleRotate 40s linear infinite;
+  }
+
+  .hero-bg-circle-2 {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42vw;
+    height: 42vw;
+    border-radius: 50%;
+    border: 1px solid rgba(196, 98, 45, 0.12);
+    z-index: 0;
+  }
+
+  @keyframes gentleRotate {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to   { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-subhead {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--terracotta);
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--terra-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-muted);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+
+  .hero-visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeUp 0.9s 0.2s ease both;
+  }
+
+  /* Oracle emblem */
+  .oracle-emblem {
+    position: relative;
+    width: min(420px, 38vw);
+    aspect-ratio: 1;
+  }
+
+  .oracle-emblem svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-quote {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(180, 150, 110, 0.3);
+    animation: fadeUp 0.9s 0.4s ease both;
+  }
+
+  .hero-quote blockquote {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  .hero-quote cite {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-style: normal;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--parchment), var(--gold-light), var(--parchment), transparent);
+    margin: 0 4rem;
+  }
+
+  /* ── MISSION STRIP ── */
+  .mission-strip {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .mission-label {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .mission-stat {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .mission-text {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream-dark);
+    line-height: 1.6;
+    border-left: 2px solid var(--terracotta);
+    padding-left: 2rem;
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    padding: 6rem 4rem;
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--parchment);
+  }
+
+  .service-card {
+    background: var(--cream);
+    padding: 2.5rem;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--terracotta);
+    transition: height 0.35s ease;
+  }
+
+  .service-card:hover { background: var(--white); }
+  .service-card:hover::before { height: 100%; }
+
+  .service-number {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--parchment);
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    transition: color 0.25s;
+  }
+
+  .service-card:hover .service-number { color: var(--terra-light); opacity: 0.5; }
+
+  .service-name {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-outcomes {
+    list-style: none;
+    border-top: 1px solid var(--cream-dark);
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .service-outcomes li {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .service-outcomes li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-size: 0.7rem;
+  }
+
+  /* ── HOW IT WORKS ── */
+  #how {
+    padding: 6rem 4rem;
+    background: var(--ink);
+  }
+
+  #how .section-eyebrow { color: var(--gold-light); }
+  #how .section-eyebrow::before { background: var(--gold-light); }
+  #how .section-title { color: var(--cream); max-width: 600px; }
+
+  .journey-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 3.5rem;
+    position: relative;
+  }
+
+  .journey-steps::after {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: linear-gradient(to right, var(--terracotta), var(--gold), var(--terracotta));
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid var(--terracotta);
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  .step-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+
+  .step-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+
+  /* ── WHY DELPHI ── */
+  #why {
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .why-visual {
+    position: relative;
+  }
+
+  .why-quote-card {
+    background: var(--white);
+    border: 1px solid var(--parchment);
+    border-left: 3px solid var(--terracotta);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .why-quote-card blockquote {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .why-quote-card cite {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-style: normal;
+  }
+
+  .why-card-offset {
+    background: var(--cream-dark);
+    border: 1px solid var(--parchment);
+    padding: 2rem 2.5rem;
+    margin-left: 2rem;
+  }
+
+  .why-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .metric {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--parchment);
+  }
+
+  .metric-num {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--terracotta);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .metric-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .differentiators {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .diff-item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .diff-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .diff-icon svg { width: 1rem; height: 1rem; }
+
+  .diff-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .diff-text {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 6rem 4rem;
+    background: var(--cream-dark);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .about-portrait {
+    position: relative;
+  }
+
+  .portrait-frame {
+    aspect-ratio: 3/4;
+    background: var(--parchment);
+    border: 1px solid rgba(180, 150, 110, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portrait-placeholder {
+    font-family: var(--serif);
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--ink-muted);
+    opacity: 0.3;
+  }
+
+  .portrait-caption {
+    margin-top: 1.25rem;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: center;
+  }
+
+  .about-bio h3 {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .about-bio h3 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .about-bio .bio-role {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+  }
+
+  .bio-text {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+
+
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 6rem 4rem;
+    background: var(--ink);
+  }
+
+  #contact .section-eyebrow { color: var(--gold-light); }
+  #contact .section-eyebrow::before { background: var(--gold-light); }
+  #contact .section-title { color: var(--cream); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream-dark);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-item-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    min-width: 5rem;
+    margin-top: 0.15rem;
+  }
+
+  .contact-item-value {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--ink-muted);
+  }
+
+  .contact-item-value a {
+    color: var(--cream-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 106, 0.3);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .contact-item-value a:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .form-input, .form-textarea, .form-select {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--cream);
+    padding: 0.8rem 1rem;
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: rgba(196, 98, 45, 0.6);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+
+  .form-select option { background: var(--ink-mid); }
+
+  .form-submit {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--terracotta);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover {
+    background: var(--terra-light);
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #100D09;
+    padding: 2.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-brand span { color: var(--terracotta); }
+
+  .footer-meta {
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.18);
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-meta a {
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-meta a:hover { color: var(--gold-light); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+
+    #home {
+      grid-template-columns: 1fr;
+      padding: 6rem 1.5rem 3rem;
+      gap: 2.5rem;
+    }
+    .hero-visual { display: none; }
+    .hero-bg-circle, .hero-bg-circle-2 { display: none; }
+
+    .mission-strip {
+      grid-template-columns: 1fr;
+      padding: 3rem 1.5rem;
+      gap: 2rem;
+    }
+    .mission-text { font-size: 1.15rem; }
+
+    #services { padding: 4rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 1px; }
+
+    #how { padding: 4rem 1.5rem; }
+    .journey-steps { grid-template-columns: 1fr 1fr; }
+    .journey-steps::after { display: none; }
+
+    #why { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+
+    #about { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .portrait-frame { aspect-ratio: 1; max-width: 280px; }
+
+    #contact { padding: 4rem 1.5rem; }
+    .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+    .section-divider { margin: 0 1.5rem; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="16.5" stroke="#C4622D" stroke-width="1"/>
+        <circle cx="18" cy="18" r="10" stroke="#C4622D" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="18" cy="18" r="3" fill="#C4622D"/>
+        <line x1="18" y1="2" x2="18" y2="6" stroke="#C4622D" stroke-width="1"/>
+        <line x1="18" y1="30" x2="18" y2="34" stroke="#C4622D" stroke-width="1"/>
+        <line x1="2" y1="18" x2="6" y2="18" stroke="#C4622D" stroke-width="1"/>
+        <line x1="30" y1="18" x2="34" y2="18" stroke="#C4622D" stroke-width="1"/>
+      </svg>
+    <span class="nav-logo-text">Delphi <span>Decide</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-circle"></div>
+  <div class="hero-bg-circle-2"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">AI consulting · London</p>
+    <h1 class="hero-headline">
+      Your data,<br>
+      your <em>decisions</em>,<br>
+      your clarity.
+    </h1>
+    <p class="hero-subhead">
+      We help growing businesses stop guessing and start knowing — by building custom AI tools that turn scattered data into confident decisions.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a conversation</a>
+      <a href="#services" class="btn-ghost">See what we build</a>
+    </div>
+
+    <div class="hero-quote">
+      <blockquote>
+        "Most of the world will make decisions by either guessing or using their gut. They will be either lucky or wrong."
+      </blockquote>
+      <cite>— Suhail Doshi, CEO of Mixpanel</cite>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="oracle-emblem">
+      <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Outer instrument rings -->
+        <circle cx="210" cy="210" r="200" stroke="#C4622D" stroke-width="0.75" stroke-opacity="0.18" fill="none"/>
+        <circle cx="210" cy="210" r="182" stroke="#B8922A" stroke-width="0.5" stroke-opacity="0.12" stroke-dasharray="2 7" fill="none"/>
+        <g stroke="#C4622D" stroke-width="1" stroke-opacity="0.22">
+          <line x1="210" y1="10"  x2="210" y2="26"/>
+          <line x1="210" y1="394" x2="210" y2="410"/>
+          <line x1="10"  y1="210" x2="26"  y2="210"/>
+          <line x1="394" y1="210" x2="410" y2="210"/>
+          <line x1="352" y1="68"  x2="341" y2="79"/>
+          <line x1="68"  y1="352" x2="79"  y2="341"/>
+          <line x1="352" y1="352" x2="341" y2="341"/>
+          <line x1="68"  y1="68"  x2="79"  y2="79"/>
+        </g>
+
+        <!-- Penrose triangle — rotated 90° anticlockwise so apex points up -->
+        <g transform="rotate(-90, 210, 210) scale(0.88) translate(25, 25)">
+          <path style="stroke:#C4622D;fill:#C4622D"   d="m70 360v-260l180 90 40-20-260-130v300z"/>
+          <path style="stroke:#C4622D;fill:#8B3D17"   d="m70 100l40 20v180l260-130v40l-300 150z"/>
+          <path style="stroke:#C4622D;fill:#D4AF6A"   d="m110 260l180-90-260-130 40-20 300 150-260 130z"/>
+        </g>
+
+        <!-- Wordmark -->
+        <text x="210" y="390" text-anchor="middle"
+          font-family="'Cormorant Garamond', Georgia, serif"
+          font-size="11" font-weight="300" letter-spacing="7"
+          fill="#1C1510" fill-opacity="0.25">DELPHI DECIDE</text>
+
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION STRIP -->
+<div class="mission-strip reveal">
+  <div>
+    <p class="mission-label">The oracle principle</p>
+    <div class="mission-stat">Decide,<br><em style="font-style:italic; color:#D4AF6A;">don't guess.</em></div>
+  </div>
+  <p class="mission-text">
+    The Oracle at Delphi didn't give you data. It gave you clarity. We believe that every business already holds the answers in its own numbers — it just needs someone to ask the right questions.
+  </p>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">What we build</p>
+    <h2 class="section-title">Custom tools that turn <em>your data</em> into decisions</h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-number">01</div>
+      <h3 class="service-name">Custom Analytics Dashboards</h3>
+      <p class="service-desc">
+        Real-time business intelligence built as web applications — not off-the-shelf tools. We connect your POS, inventory, marketing and financial data into a single portal you'll actually check.
+      </p>
+      <ul class="service-outcomes">
+        <li>Stop rebuilding the same spreadsheets every week</li>
+        <li>See margins, waste and trends in real time</li>
+        <li>Make Monday morning decisions on Friday night</li>
+      </ul>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-number">02</div>
+      <h3 class="service-name">AI Workflow Automation</h3>
+      <p class="service-desc">
+        Bespoke automation of the repetitive work that's eating your team's time — order processing, reporting, customer follow-up, data synchronisation — built with AI APIs and custom interfaces.
+      </p>
+      <ul class="service-outcomes">
+        <li>Reclaim 10–20 hours of manual work per week</li>
+        <li>Eliminate copy-paste errors between systems</li>
+        <li>Scale operations without scaling headcount</li>
+      </ul>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-number">03</div>
+      <h3 class="service-name">Predictive Intelligence</h3>
+      <p class="service-desc">
+        Know what's coming before it arrives. Churn prediction, demand forecasting, customer segmentation — delivered as tools your team uses daily, not data science reports that sit in a drawer.
+      </p>
+      <ul class="service-outcomes">
+        <li>Identify at-risk customers before they leave</li>
+        <li>Forecast demand and right-size inventory</li>
+        <li>Know which customers are worth acquiring</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">The process</p>
+    <h2 class="section-title" style="color: var(--cream);">From scattered data to <em style="color: var(--terra-light);">clear decisions</em></h2>
+  </div>
+
+  <div class="journey-steps">
+    <div class="step reveal">
+      <div class="step-circle">I</div>
+      <h4 class="step-title">Discovery</h4>
+      <p class="step-desc">We map your data landscape, identify the decisions you're making badly, and define what success looks like in measurable terms.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-circle">II</div>
+      <h4 class="step-title">Build</h4>
+      <p class="step-desc">We build custom — not configure off-the-shelf. Every dashboard and automation is designed around how your specific business actually works.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-circle">III</div>
+      <h4 class="step-title">Embed</h4>
+      <p class="step-desc">We train your team until the tools are genuinely used, not just delivered. A dashboard nobody checks is a dashboard that doesn't exist.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-circle">IV</div>
+      <h4 class="step-title">Evolve</h4>
+      <p class="step-desc">On retainer, we monitor, optimise and expand — adding new data sources, new automations and new insight as your business grows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DELPHI -->
+<section id="why">
+  <div class="why-visual reveal">
+    <div class="why-quote-card">
+      <blockquote>
+        "It is a capital mistake to theorise before one has the data."
+      </blockquote>
+      <cite>— Arthur Conan Doyle</cite>
+    </div>
+
+    <div class="why-metrics">
+      <div class="metric">
+        <span class="metric-num">3–5×</span>
+        <span class="metric-label">ROI on analytics investment (typical)</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num">2 wks</span>
+        <span class="metric-label">Average time to first useful insight</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num">15 hrs</span>
+        <span class="metric-label">Manual reporting hours recovered per week</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num">Custom</span>
+        <span class="metric-label">Built for your business, not adapted from a template</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="differentiators reveal">
+    <div class="section-header" style="margin-bottom: 2.5rem;">
+      <p class="section-eyebrow">Why Delphi Decide</p>
+      <h2 class="section-title">Built by someone who has <em>actually run a business</em></h2>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-icon">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#C4622D" stroke-width="1.25"/><path d="M5 8l2 2 4-4" stroke="#C4622D" stroke-width="1.25" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h4 class="diff-title">We build, not advise</h4>
+        <p class="diff-text">You get working software you can use on Monday, not a strategy deck to file away. Every engagement ends with a tool, not a report.</p>
+      </div>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-icon">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#C4622D" stroke-width="1.25"/><path d="M5 8l2 2 4-4" stroke="#C4622D" stroke-width="1.25" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h4 class="diff-title">Operations experience, not just technical</h4>
+        <p class="diff-text">Years of experience founding and running businesses means we understand what a business owner's Tuesday afternoon actually looks like — and build tools that fit how real businesses operate, not how consultants imagine they do.</p>
+      </div>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-icon">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#C4622D" stroke-width="1.25"/><path d="M5 8l2 2 4-4" stroke="#C4622D" stroke-width="1.25" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h4 class="diff-title">Quant depth, plain language</h4>
+        <p class="diff-text">Our foundation is deeply analytical and technical — but we believe the smartest thing you can do with complex analysis is explain it simply. We translate what the numbers are saying into language that drives decisions, not eyebrows.</p>
+      </div>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-icon">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#C4622D" stroke-width="1.25"/><path d="M5 8l2 2 4-4" stroke="#C4622D" stroke-width="1.25" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h4 class="diff-title">We stay after delivery</h4>
+        <p class="diff-text">On retainer, we're there when the data changes, the business pivots, or a new question emerges that the original build didn't answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">The founder</p>
+    <h2 class="section-title">The rare combination of <em>builder and operator</em></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-portrait reveal">
+      <div class="portrait-frame">
+        <span class="portrait-placeholder">S</span>
+      </div>
+      <p class="portrait-caption">Steve · Founder, Delphi Decide · London</p>
+    </div>
+
+    <div class="about-bio reveal">
+      <h3>Quantitative mind.<br><em>Operational instincts.</em></h3>
+      <p class="bio-role">Founder · AI Consultant · London</p>
+
+      <p class="bio-text">
+        Most AI consultants are either technical people who can't speak to business owners in plain language, or business people who can't actually build anything. I've spent 30 years doing both.
+      </p>
+      <p class="bio-text">
+        I started in quantitative finance — trading systems, derivatives pricing, neural networks — at a time when machine learning was a research curiosity, not a product feature. That technical foundation has never left.
+      </p>
+      <p class="bio-text">
+        Then I spent eight years running a restaurant in London. I learned what the numbers in your business actually mean when it's your money, your team, and your margin at stake. That operational perspective shapes everything I build.
+      </p>
+      <p class="bio-text">
+        Delphi Decide exists because I got tired of seeing smart business owners make decisions in the dark — not from lack of data, but from lack of tools that turned that data into something actionable.
+      </p>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Get in touch</p>
+    <h2 class="section-title">Let's talk about<br><em style="color: var(--terra-light);">your data</em></h2>
+  </div>
+
+  <div class="contact-layout">
+    <div class="reveal">
+      <p class="contact-intro">
+        The best first conversation isn't a sales call — it's a genuine exchange about what decisions you're making badly right now, and what data you already have that could change that.
+      </p>
+      <p class="contact-intro" style="font-size: 0.95rem; font-style: normal; color: var(--ink-muted);">
+        No pitch decks. No jargon. Just an honest conversation about whether we're the right fit.
+      </p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-item-label">Email</span>
+          <span class="contact-item-value">
+            <a href="/cdn-cgi/l/email-protection#2d425f4c4e41486d4948415d454449484e444948034e4240"><span class="__cf_email__" data-cfemail="9af5e8fbf9f6ffdafefff6eaf2f3fefff9f3feffb4f9f5f7">[email&#160;protected]</span></a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Phone</span>
+          <span class="contact-item-value">
+            <a href="tel:+447838142428">+44 (0)7838 142 428</a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Location</span>
+          <span class="contact-item-value">London, UK — serving businesses across the UK and internationally</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">LinkedIn</span>
+          <span class="contact-item-value">
+            <a href="#">Connect on LinkedIn</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name</label>
+          <input type="text" class="form-input" placeholder="Your first name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name</label>
+          <input type="text" class="form-input" placeholder="Your last name" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Business type</label>
+        <select class="form-select form-input">
+          <option value="" disabled selected>Select your sector</option>
+          <option>E-commerce</option>
+          <option>Hospitality / F&B</option>
+          <option>Professional services</option>
+          <option>Retail</option>
+          <option>Health & wellness</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">What's the decision you're struggling to make?</label>
+        <textarea class="form-textarea" placeholder="Tell me about the data problem that keeps you up at night. The more specific, the better." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Delphi <span>Decide</span></span>
+  <div class="footer-meta">
+    <span>© 2026 Delphi Decide · delphidecide.com</span>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <span>Company No. 07329976 · Registered England & Wales</span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll shadow
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 30 ? '0 1px 20px rgba(28,21,16,0.08)' : 'none';
+  });
+
+  // Form submit handler
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message sent ✓';
+    btn.style.background = '#3B6D11';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send message →';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--terracotta)' : '';
+    });
+  });
+
+</script>
+</body>
+</html>
