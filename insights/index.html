@@ -56,9 +56,20 @@
 <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="xi Si init Ni Bi pr qi Ui $i capture calculateEventProperties Zi register register_once register_for_session unregister unregister_for_session Yi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ki identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Qi Wi createPersonProfile setInternalOrTestUser Ji Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing zi debug mr it getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_ADMFykUm9mj6cPhDvzqY88A2VRErwx26H7L9qmDkrSYG', {
-        api_host: 'https://eu.i.posthog.com',
-        defaults: '2026-05-30'
+        api_host: 'https://delphidecide.com/ph',
+        ui_host: 'https://eu.posthog.com',
+        defaults: '2026-05-30',
+        persistence: 'memory'
     })
+    // Conversion events: email / phone / LinkedIn clicks (site-wide)
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a || !window.posthog || !posthog.capture) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('mailto:') === 0) posthog.capture('email_click', { href: h, page: location.pathname });
+        else if (h.indexOf('tel:') === 0) posthog.capture('phone_click', { href: h, page: location.pathname });
+        else if (h.indexOf('linkedin.com') !== -1) posthog.capture('linkedin_click', { href: h, page: location.pathname });
+    });
 </script>
 <style>
   :root {
@@ -268,20 +279,96 @@
 <!-- POST LIST -->
 <main class="post-list">
 
-  <!--
-    PUBLISHING A NEW POST — add an entry at the TOP of this list:
-
-  <a class="post-card" href="/insights/example-article-slug/">
-    <p class="post-meta">12 July 2026 · Decision-making · 6 min read</p>
-    <h2 class="post-title">The article title goes here</h2>
-    <p class="post-excerpt">One or two sentences summarising the article — same text as its meta description works well.</p>
+  <a class="post-card" href="/insights/when-the-machine-suggests-who-decides/">
+    <p class="post-meta">30 April 2026 · Technology · 7 min read</p>
+    <h2 class="post-title">When the Machine suggests, who decides?</h2>
+    <p class="post-excerpt">In the age of AI, the danger is not that machines will be wrong, but that they will be convincingly sufficient. On judgment, responsibility, and why the oracle must not become the king.</p>
     <span class="post-readmore">Read the essay →</span>
   </a>
 
-    Then: add the URL to /sitemap.xml, and remove the coming-soon block below once the first post is live.
-  -->
+  <a class="post-card" href="/insights/survivorship-bias/">
+    <p class="post-meta">23 February 2026 · Cognitive Bias · 2 min read</p>
+    <h2 class="post-title">Survivorship Bias</h2>
+    <p class="post-excerpt">Why we draw the wrong lessons from success stories — from Abraham Wald's bullet-riddled bombers to self-help gurus and billionaire dropouts. A short primer on survivorship bias.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
 
-  <p class="coming-soon">The first essays are being written — back soon.</p>
+  <a class="post-card" href="/insights/on-the-speed-of-progress/">
+    <p class="post-meta">23 February 2026 · Technology · 2 min read</p>
+    <h2 class="post-title">On the Speed of Progress</h2>
+    <p class="post-excerpt">From Kittyhawk to the moon in 66 years, from BASIC on an Apple IIe to containerised machine learning in the cloud. A reflection on the dizzying pace of technological change — and what it means for anyone trying to make decisions in it.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/what-is-machine-learning/">
+    <p class="post-meta">23 February 2026 · Technology · 4 min read</p>
+    <h2 class="post-title">What is Machine Learning</h2>
+    <p class="post-excerpt">A plain-English demystification of machine learning — the four steps every model goes through, and the difference between supervised, unsupervised and reinforcement learning, with real-world examples.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/anchoring/">
+    <p class="post-meta">23 February 2026 · Cognitive Bias · 5 min read</p>
+    <h2 class="post-title">Anchoring</h2>
+    <p class="post-excerpt">The first in a series on cognitive biases. How a single, often arbitrary, piece of information quietly shapes our judgement — from Bargain Hunt to Kahneman and Tversky's rigged wheel of fortune.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/friendly-advice/">
+    <p class="post-meta">23 February 2026 · Psychology · 2 min read</p>
+    <h2 class="post-title">Friendly Advice</h2>
+    <p class="post-excerpt">The advice we give friends is often wiser than the advice we follow ourselves. Why distance sharpens judgement — and a simple trick for making better decisions under pressure.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/smart-meters/">
+    <p class="post-meta">23 February 2026 · Economics · 3 min read</p>
+    <h2 class="post-title">Smart Meters</h2>
+    <p class="post-excerpt">Can a smart meter really save 70 million trees? A story about an Amsterdam suburb, a meter in the hallway, and why what gets measured gets improved — but only because of the behaviour measurement triggers.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/struggling-with-self-control/">
+    <p class="post-meta">23 February 2026 · Psychology · 3 min read</p>
+    <h2 class="post-title">Struggling with Self-Control</h2>
+    <p class="post-excerpt">Why do firm deadlines beat freedom? A personal reflection on procrastination, pre-commitment and Dan Ariely's classroom experiment — and a very human problem about getting out of a warm bed.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/the-winners-curse/">
+    <p class="post-meta">23 February 2026 · Psychology · 2 min read</p>
+    <h2 class="post-title">The Winner's Curse</h2>
+    <p class="post-excerpt">Why does winning an auction so often feel like losing? A tale of two buyers on Homes Under the Hammer, the anchor of a guide price, and the predictably irrational regret that follows a bargain.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/three-laws-of-human-behaviour/">
+    <p class="post-meta">23 February 2026 · Psychology · 3 min read</p>
+    <h2 class="post-title">The 3 Laws of Human Behaviour</h2>
+    <p class="post-excerpt">Newton's three laws of motion, reimagined for human behaviour. Friction and fuel, Kurt Lewin's B = f(P, E), and why well-intentioned actions so often produce unintended consequences.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/sunk-cost-fallacy/">
+    <p class="post-meta">10 February 2026 · Decision Making · 6 min read</p>
+    <h2 class="post-title">The Sunk Cost Fallacy in Everyday Decision-Making</h2>
+    <p class="post-excerpt">Why we throw good money after bad — and how to recognise when past investments are clouding your judgement today. A practical look at the sunk cost fallacy and the one question that escapes it.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/expected-value/">
+    <p class="post-meta">5 February 2026 · Decision Making · 7 min read</p>
+    <h2 class="post-title">Expected Value: The Single Most Useful Idea in Rationality</h2>
+    <p class="post-excerpt">A clear-eyed look at expected value reasoning and why most people consistently ignore it — to their detriment. Probability times magnitude, the biases that blind us to it, and the long game.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
+
+  <a class="post-card" href="/insights/bayesian-thinking/">
+    <p class="post-meta">2 February 2026 · Philosophy · 9 min read</p>
+    <h2 class="post-title">Bayesian Thinking: Updating Your Beliefs with Evidence</h2>
+    <p class="post-excerpt">How the 18th-century theorem at the heart of probability theory can transform the quality of your everyday reasoning — priors, posteriors, and the antidote to confirmation bias.</p>
+    <span class="post-readmore">Read the essay →</span>
+  </a>
 
 </main>
 

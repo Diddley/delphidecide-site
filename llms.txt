@@ -21,4 +21,21 @@ Steve Solomon — founder and AI consultant, London. Around 30 years spanning qu
 ## Pages
 
 - [Home](https://delphidecide.com/): services, process, founder background and contact details.
+- [About](https://delphidecide.com/about/): founder Steve Solomon — background, credentials, and the thinking behind Delphi Decide.
 - [Insights](https://delphidecide.com/insights/): essays on decision-making, data and AI for growing businesses.
+
+## Insights articles
+
+- [When the Machine suggests, who decides?](https://delphidecide.com/insights/when-the-machine-suggests-who-decides/)
+- [Survivorship Bias](https://delphidecide.com/insights/survivorship-bias/)
+- [On the Speed of Progress](https://delphidecide.com/insights/on-the-speed-of-progress/)
+- [What is Machine Learning](https://delphidecide.com/insights/what-is-machine-learning/)
+- [Anchoring](https://delphidecide.com/insights/anchoring/)
+- [Friendly Advice](https://delphidecide.com/insights/friendly-advice/)
+- [Smart Meters](https://delphidecide.com/insights/smart-meters/)
+- [Struggling with Self-Control](https://delphidecide.com/insights/struggling-with-self-control/)
+- [The Winner's Curse](https://delphidecide.com/insights/the-winners-curse/)
+- [The 3 Laws of Human Behaviour](https://delphidecide.com/insights/three-laws-of-human-behaviour/)
+- [The Sunk Cost Fallacy in Everyday Decision-Making](https://delphidecide.com/insights/sunk-cost-fallacy/)
+- [Expected Value: The Single Most Useful Idea in Rationality](https://delphidecide.com/insights/expected-value/)
+- [Bayesian Thinking: Updating Your Beliefs with Evidence](https://delphidecide.com/insights/bayesian-thinking/)

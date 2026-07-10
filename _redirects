@@ -1,1 +1,6 @@
+# PostHog reverse proxy (first-party analytics, avoids ad blockers)
+/ph/static/*  https://eu-assets.i.posthog.com/static/:splat  200
+/ph/*         https://eu.i.posthog.com/:splat  200
+
+# Canonical host
 https://www.delphidecide.com/* https://delphidecide.com/:splat 301!
