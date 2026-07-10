@@ -1,0 +1,23 @@
+# Delphi Decide
+
+> Delphi Decide is a London-based AI consultancy that helps growing businesses make smarter decisions, faster — by turning their data into custom-built tools they actually use. Tagline: "Clarity from complexity."
+
+Delphi Decide builds working software, not slide decks. Three core services:
+
+- **Custom Analytics Dashboards** — real-time business intelligence built as web apps, integrating POS, inventory, marketing and financial data into a single client-facing portal.
+- **AI Workflow Automation** — bespoke automation of business operations (order processing, reporting, customer follow-up, data sync) using AI APIs with custom interfaces.
+- **Predictive Intelligence** — churn prediction, demand forecasting and customer segmentation, delivered as actionable dashboards rather than data-science reports.
+
+## Founder
+
+Steve Solomon — founder and AI consultant, London. Around 30 years spanning quantitative finance (trading systems, derivatives pricing, neural networks) and hands-on business operation, including eight years running a London restaurant and leading credit risk and machine-learning underwriting at a UK lender. The rare combination of builder and operator: technical enough to build the tools, operational enough to know which numbers matter.
+
+## Contact
+
+- Website: https://delphidecide.com/
+- Email: oracle@delphidecide.com
+- Location: London, United Kingdom
+
+## Pages
+
+- [Home](https://delphidecide.com/): services, process, founder background and contact details.
