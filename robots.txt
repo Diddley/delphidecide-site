@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /insights/_template/
 
 Sitemap: https://delphidecide.com/sitemap.xml
