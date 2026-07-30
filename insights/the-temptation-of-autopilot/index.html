@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agents and the Temptation of Autopilot — Delphi Decide</title>
+<meta name="description" content="AI agents can act, not just answer — and autonomy multiplies the cost of error. Where agents genuinely help, and why to automate execution before discretion.">
+<link rel="canonical" href="https://delphidecide.com/insights/the-temptation-of-autopilot/">
+<meta name="author" content="Steve Solomon">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Delphi Decide">
+<meta property="og:title" content="AI Agents and the Temptation of Autopilot">
+<meta property="og:description" content="AI agents can act, not just answer — and autonomy multiplies the cost of error. Where agents genuinely help, and why to automate execution before discretion.">
+<meta property="og:url" content="https://delphidecide.com/insights/the-temptation-of-autopilot/">
+<meta property="og:image" content="https://delphidecide.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta property="article:published_time" content="2026-07-30">
+<meta property="article:author" content="Steve Solomon">
+<meta property="article:section" content="Technology">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Agents and the Temptation of Autopilot">
+<meta name="twitter:description" content="AI agents can act, not just answer — and autonomy multiplies the cost of error. Where agents genuinely help, and why to automate execution before discretion.">
+<meta name="twitter:image" content="https://delphidecide.com/og-image.png">
+
+<!-- Structured data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://delphidecide.com/insights/the-temptation-of-autopilot/#article",
+  "headline": "AI Agents and the Temptation of Autopilot",
+  "description": "AI agents can act, not just answer — and autonomy multiplies the cost of error. Where agents genuinely help, and why to automate execution before discretion.",
+  "url": "https://delphidecide.com/insights/the-temptation-of-autopilot/",
+  "datePublished": "2026-07-30",
+  "dateModified": "2026-07-30",
+  "image": "https://delphidecide.com/og-image.png",
+  "inLanguage": "en-GB",
+  "isPartOf": { "@id": "https://delphidecide.com/insights/#blog" },
+  "publisher": { "@id": "https://delphidecide.com/#organization" },
+  "author": {
+    "@type": "Person",
+    "@id": "https://delphidecide.com/#founder",
+    "name": "Steve Solomon",
+    "jobTitle": "Founder & AI Consultant",
+    "url": "https://delphidecide.com/#about"
+  }
+}
+</script>
+<!-- Structured data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an AI agent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An AI agent is a system that can pursue a goal across multiple steps with some degree of autonomy — gathering information, using software tools, making intermediate choices and taking actions in sequence, rather than simply answering questions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do AI agents genuinely help a business?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Agents work best where the objective is narrow and clearly defined, errors are limited and reversible, rules are stable, tool access is tightly scoped, and human review exists at sensible checkpoints — tasks like research triage, reconciliation, document routing and first-pass operational support." }
+    },
+    {
+      "@type": "Question",
+      "name": "What rule of thumb should businesses use before deploying AI agents?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Automate execution before you automate discretion. If a task is clear, repetitive and low-stakes, automation is usually a gift; if it depends on nuance, tacit knowledge or conflicting objectives, autonomy should be introduced with enormous caution." }
+    }
+  ]
+}
+</script>
+<!-- Structured data: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://delphidecide.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://delphidecide.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "AI Agents and the Temptation of Autopilot", "item": "https://delphidecide.com/insights/the-temptation-of-autopilot/" }
+  ]
+}
+</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="xi Si init Ni Bi pr qi Ui $i capture calculateEventProperties Zi register register_once register_for_session unregister unregister_for_session Yi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ki identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Qi Wi createPersonProfile setInternalOrTestUser Ji Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing zi debug mr it getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_ADMFykUm9mj6cPhDvzqY88A2VRErwx26H7L9qmDkrSYG', {
+        api_host: 'https://delphidecide.com/ph',
+        ui_host: 'https://eu.posthog.com',
+        defaults: '2026-05-30',
+        persistence: 'memory'
+    })
+    // Conversion events: email / phone / LinkedIn clicks (site-wide)
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a || !window.posthog || !posthog.capture) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('mailto:') === 0) posthog.capture('email_click', { href: h, page: location.pathname });
+        else if (h.indexOf('tel:') === 0) posthog.capture('phone_click', { href: h, page: location.pathname });
+        else if (h.indexOf('linkedin.com') !== -1) posthog.capture('linkedin_click', { href: h, page: location.pathname });
+    });
+</script>
+<style>
+  :root {
+    --cream:       #F7F3EC;
+    --cream-dark:  #EDE7DA;
+    --parchment:   #E8DFD0;
+    --terracotta:  #C4622D;
+    --terra-light: #E8845A;
+    --terra-dark:  #8B3D17;
+    --ink:         #1C1510;
+    --ink-mid:     #3D2E22;
+    --ink-soft:    #6B5744;
+    --ink-muted:   #9B8878;
+    --gold:        #B8922A;
+    --gold-light:  #D4AF6A;
+    --white:       #FDFAF6;
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --sans:        'Jost', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION (mirrors homepage) ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(247, 243, 236, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(180, 150, 110, 0.2);
+    transition: all 0.3s ease;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .nav-logo-mark { width: 36px; height: 36px; position: relative; }
+  .nav-logo-text { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; color: var(--ink); letter-spacing: 0.01em; }
+  .nav-logo-text span { color: var(--terracotta); }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.8rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-soft); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-links a.active { color: var(--terracotta); }
+  .nav-cta {
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white) !important; background: var(--terracotta);
+    padding: 0.55rem 1.4rem; border-radius: 2px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--terra-dark) !important; color: var(--white) !important; transform: translateY(-1px); }
+
+  /* ── ARTICLE ── */
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 10rem 2rem 5rem;
+  }
+  .article-breadcrumb {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .article-breadcrumb a { color: var(--terracotta); text-decoration: none; }
+  .article-breadcrumb a:hover { text-decoration: underline; }
+  .article-meta {
+    font-size: 0.74rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  h1 em { font-style: italic; color: var(--terracotta); }
+  .article-standfirst {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--parchment);
+  }
+
+  .article-body h2 {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 2.75rem 0 1rem;
+  }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+  }
+  .article-body p { color: var(--ink-mid); margin-bottom: 1.25rem; }
+  .article-body ul, .article-body ol { margin: 0 0 1.25rem 1.4rem; color: var(--ink-mid); }
+  .article-body li { margin-bottom: 0.5rem; }
+  .article-body a { color: var(--terracotta); }
+  .article-body strong { font-weight: 500; color: var(--ink); }
+  .article-body blockquote {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  /* ── AUTHOR BOX ── */
+  .author-box {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--cream-dark);
+    border-radius: 3px;
+  }
+  .author-box img {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .author-box .author-name {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .author-box p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+  .author-box a { color: var(--terracotta); text-decoration: none; }
+
+  /* ── CTA BAND ── */
+  .article-cta {
+    text-align: center;
+    padding: 3rem 2rem 7rem;
+  }
+  .article-cta p {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+  .article-cta a {
+    font-family: var(--sans); font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--white); background: var(--terracotta);
+    padding: 0.8rem 2rem; border-radius: 2px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .article-cta a:hover { background: var(--terra-dark); }
+
+  /* ── FOOTER (mirrors homepage) ── */
+  footer {
+    background: #100D09;
+    padding: 2.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .footer-brand { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.3); }
+  .footer-brand span { color: var(--terracotta); }
+  .footer-meta {
+    font-size: 0.72rem; font-weight: 300; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.18); display: flex; gap: 2rem;
+  }
+  .footer-meta a { color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-meta a:hover { color: var(--gold-light); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.25rem; }
+    .nav-links li.hide-mobile { display: none; }
+    .article-wrap { padding-top: 8rem; }
+    .author-box { flex-direction: column; text-align: center; }
+    footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; text-align: center; }
+    .footer-meta { flex-direction: column; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="16.5" stroke="#C4622D" stroke-width="1"/>
+        <circle cx="18" cy="18" r="10" stroke="#C4622D" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="18" cy="18" r="3" fill="#C4622D"/>
+        <line x1="18" y1="2" x2="18" y2="6" stroke="#C4622D" stroke-width="1"/>
+        <line x1="18" y1="30" x2="18" y2="34" stroke="#C4622D" stroke-width="1"/>
+        <line x1="2" y1="18" x2="6" y2="18" stroke="#C4622D" stroke-width="1"/>
+        <line x1="30" y1="18" x2="34" y2="18" stroke="#C4622D" stroke-width="1"/>
+      </svg>
+    <span class="nav-logo-text">Delphi <span>Decide</span></span>
+  </a>
+  <ul class="nav-links">
+    <li class="hide-mobile"><a href="/#services">Services</a></li>
+    <li class="hide-mobile"><a href="/#how">How it works</a></li>
+    <li class="hide-mobile"><a href="/#about">About</a></li>
+    <li><a href="/insights/" class="active">Insights</a></li>
+    <li><a href="/#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE -->
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="/insights/">← Insights</a></p>
+  <p class="article-meta">30 July 2026 · Technology · 5 min read</p>
+  <h1>AI Agents and the <em>Temptation of Autopilot</em></h1>
+  <p class="article-standfirst">We no longer want the machine merely to answer — we want it to <em>do</em>. What running real-time lending decisions taught me about how much authority to give software, and exactly where it should stop.</p>
+
+  <div class="article-body">
+
+    <p>A new phrase has entered the modern technology lexicon with suspicious speed: <em>agentic AI</em>.</p>
+
+    <p>Not long ago, most businesses were experimenting with AI as a kind of very clever assistant. It drafted emails, summarised documents, cleaned up copy, wrote bits of code, and answered questions in a remarkably polished tone. Now the ambition has expanded. We no longer want the machine merely to answer. We want it to <em>do</em>.</p>
+
+    <p>Book the meeting.<br>
+    Compare the vendors.<br>
+    Reorder the stock.<br>
+    Reply to the customer.<br>
+    Monitor the systems.<br>
+    Escalate only if necessary.</p>
+
+    <p>In other words, we are moving from AI as adviser to AI as actor.</p>
+
+    <p>This is not a trivial shift. I say that as someone who has lived it. Years before "agentic" was a buzzword, I was responsible for decisioning at a lending business where our models approved or declined loans in real time. Every day, software took actions with real money attached — and my job was to decide exactly how much authority it had, and where that authority stopped. Most of what I believe about autonomous systems was learned there, not in a demo.</p>
+
+    <h2>From tool to proxy</h2>
+    <p>A calculator does not decide what matters. A spreadsheet does not choose which trade-off is acceptable. Even a predictive model, left in its proper place, still sits one step removed from action. It informs a decision. Someone, somewhere, remains visibly accountable.</p>
+    <p>Agents blur that line.</p>
+    <p>An AI agent is, broadly speaking, a system that can pursue a goal across multiple steps with some degree of autonomy. It may gather information, use software tools, make intermediate choices, and take actions in sequence. The promise is obvious: less manual work, faster execution, lower operating cost, and the ability for small teams to perform like much larger ones.</p>
+    <p>The seduction is equally obvious: once a system appears competent across ten small decisions, it becomes tempting to trust it with the eleventh.</p>
+    <p>That is where things get interesting.</p>
+
+    <h2>Autonomy compounds both value and error</h2>
+    <p>The appeal of automation has always been straightforward. If a task is repetitive, rules-based, and tedious, machines are usually better candidates than humans. They do not get bored, distracted, or resentful. They scale nicely. They are available at odd hours.</p>
+    <p>But autonomous systems introduce a different kind of risk. A bad answer is one thing. A bad action is another.</p>
+    <p>If a chatbot drafts an awkward customer email, a human can amend it. If an agent sends that email, promises a refund, updates the CRM, triggers a warehouse return, and logs the case as resolved — all incorrectly — the error has already spread through the organisation before anyone notices.</p>
+    <p>In lending, we understood this viscerally. A model that misjudges a loan application hasn't produced a wrong opinion; it has moved money. By the time a pattern of bad decisions is visible in the numbers, the decisions have already been made, at machine speed, hundreds of times.</p>
+    <p>Autonomy does not merely increase efficiency. It increases the radius of consequence.</p>
+
+    <blockquote>One poor judgment, multiplied by speed and permission, becomes process.</blockquote>
+
+    <h2>The demo is not the job</h2>
+    <p>Part of the difficulty is that AI agents often look more reliable in demonstration than in production.</p>
+    <p>In a demo, the task is tidy. The tools are connected. The edge cases are politely absent. The success criterion is obvious. Everyone in the room wants the thing to work.</p>
+    <p>Real businesses are less cooperative. Customers are vague. Data is missing. Systems disagree. Exceptions pile up. Policies conflict. And a large proportion of useful work consists precisely in handling the awkward cases that do not fit the script.</p>
+    <p>The more freedom an agent has, the more opportunity reality has to embarrass it.</p>
+
+    <h2>Agency without judgment</h2>
+    <p>There is also a conceptual problem. To act is not the same as to judge.</p>
+    <p>An agent may be able to complete a workflow. That does not mean it understands the significance of the workflow. It may optimise for the target it has been given while remaining oblivious to the surrounding human context.</p>
+    <p>A support agent told to minimise resolution time may rush cases closed.<br>
+    A procurement agent told to reduce cost may favour the cheapest supplier while ignoring reputational risk.<br>
+    A scheduling agent told to maximise utilisation may exhaust the very people it is meant to help coordinate.</p>
+    <p>These are not exotic failures. They are ordinary examples of Goodhart's Law in modern dress: when a measure becomes a target, it ceases to be a good measure.</p>
+    <p>Humans fall into this trap often enough. Machines simply do it faster, more literally, and with less embarrassment.</p>
+
+    <h2>Where agents genuinely help</h2>
+    <p>All that said, this is not a case against AI agents. It is a case against using them carelessly.</p>
+    <p>Used well, agents can be extremely valuable. They are excellent in environments where:</p>
+    <ul>
+      <li>the objective is narrow and clearly defined</li>
+      <li>the downside of error is limited and reversible</li>
+      <li>the rules are stable</li>
+      <li>human review exists at sensible checkpoints</li>
+      <li>tool access is tightly scoped</li>
+      <li>performance can be monitored against real outcomes rather than vibes</li>
+    </ul>
+    <p>This makes them useful for things like internal research triage, software testing routines, basic reconciliation tasks, document routing, controlled IT workflows, and first-pass operational support.</p>
+    <p>In such settings, the agent is less like a manager and more like a diligent junior: quick, tireless, occasionally impressive, and very much in need of supervision.</p>
+    <p>That is a promising arrangement.</p>
+
+    <h2>The governance question</h2>
+    <p>The real question for organisations is not whether they <em>can</em> deploy agents, but how responsibility is preserved once they do.</p>
+    <p>This is not a hypothetical gap. The UK government's latest <a href="https://www.gov.uk/government/collections/cyber-security-breaches-survey" target="_blank" rel="noopener">Cyber Security Breaches Survey</a> found that of the businesses using or adopting AI, only around a quarter have any process in place to manage the risks it creates. Three quarters are running the experiment with no house rules at all.</p>
+    <p>Every autonomous workflow should have clear answers to a few unglamorous questions:</p>
+    <ul>
+      <li>What exactly is this system allowed to do?</li>
+      <li>What is it not allowed to do?</li>
+      <li>What happens when confidence is low or information is missing?</li>
+      <li>Who reviews failures? How are mistakes detected?</li>
+      <li>Can actions be reversed?</li>
+      <li>Which metrics are being optimised, and what might those metrics distort?</li>
+      <li>At what point must a human intervene?</li>
+    </ul>
+    <p>Before our lending models could decide anything unattended, we had to answer every one of these. Not because a framework demanded it, but because the alternative was finding out the answers from our losses.</p>
+    <p>These are not bureaucratic annoyances. They are the infrastructure of trust. A system that acts without clear ownership is not advanced. It is simply convenient in a dangerous way.</p>
+
+    <h2>A useful rule of thumb</h2>
+    <p>A sensible rule is this: <strong>automate execution before you automate discretion.</strong></p>
+    <p>If a task is clear, repetitive, and low-stakes, automation is usually a gift. If a task depends on nuance, tacit knowledge, conflicting objectives, or context that is hard to formalise, autonomy should be introduced with enormous caution.</p>
+    <p>The most expensive mistake is often not using AI too little. It is using it in places where competence is easy to imitate and hard to verify. Modern systems can appear capable long before they are dependable. They can mimic understanding without grasping consequence.</p>
+
+    <h2>The discipline ahead</h2>
+    <p>The future will contain more agents, not fewer. Costs will fall, tooling will improve, and businesses under competitive pressure will keep pushing toward greater autonomy.</p>
+    <p>So the task is not resistance for its own sake. It is disciplined adoption.</p>
+    <p>Use agents where speed matters and harm is containable.<br>
+    Constrain them where context is thin.<br>
+    Audit them where incentives are distorted.<br>
+    Stop pretending that a completed workflow is the same thing as a wise outcome.</p>
+    <p>A machine that can act is a powerful tool.</p>
+    <p>A machine that can act <em>unchecked</em> is a management failure.</p>
+    <p>The temptation of autopilot is not that it looks reckless. It is that it looks efficient.</p>
+    <p>And that is why, in the age of AI agents, the oldest technological principle still applies: just because a system can run on its own does not mean it should be left alone.</p>
+
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-box">
+    <img src="/portrait.jpg" alt="Steve Solomon — Founder, Delphi Decide">
+    <div>
+      <p class="author-name">Steve Solomon</p>
+      <p>Founder of Delphi Decide. Thirty years across quantitative finance and running real businesses — building tools that turn data into decisions. <a href="/#about">More about Steve →</a></p>
+    </div>
+  </div>
+</article>
+
+<!-- CTA -->
+<div class="article-cta">
+  <p>Wrestling with a decision your data should be answering?</p>
+  <a href="/#contact">Get in touch</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Delphi <span>Decide</span></span>
+  <div class="footer-meta">
+    <span>© 2026 Delphi Decide · delphidecide.com</span>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms</a>
+    <span>Company No. 07329976 · Registered England & Wales</span>
+  </div>
+</footer>
+
+</body>
+</html>
