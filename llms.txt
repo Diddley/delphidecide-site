@@ -26,6 +26,7 @@ Steve Solomon — founder and AI consultant, London. Around 30 years spanning qu
 
 ## Insights articles
 
+- [AI Agents and the Temptation of Autopilot](https://delphidecide.com/insights/the-temptation-of-autopilot/)
 - [When the Machine suggests, who decides?](https://delphidecide.com/insights/when-the-machine-suggests-who-decides/)
 - [Survivorship Bias](https://delphidecide.com/insights/survivorship-bias/)
 - [On the Speed of Progress](https://delphidecide.com/insights/on-the-speed-of-progress/)
