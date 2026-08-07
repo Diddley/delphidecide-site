@@ -26,6 +26,7 @@ Steve Solomon — founder and AI consultant, London. Around 30 years spanning qu
 
 ## Insights articles
 
+- [Your Data Is Worth More Than Your AI](https://delphidecide.com/insights/your-data-is-worth-more-than-your-ai/)
 - [The Most Expensive Part of a Bad Month Is How Long It Takes to Notice](https://delphidecide.com/insights/how-long-does-a-bad-month-take-to-notice/)
 - [AI Agents and the Temptation of Autopilot](https://delphidecide.com/insights/the-temptation-of-autopilot/)
 - [When the Machine suggests, who decides?](https://delphidecide.com/insights/when-the-machine-suggests-who-decides/)
